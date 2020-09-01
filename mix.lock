@@ -1,0 +1,3 @@
+%{
+  "dictionary": {:git, "https://github.com/adrianomota/dictionary.git", "e4a665203a2d718d9f98784237b2aa0397ca7ede", [tag: "0.1.0"]},
+}
