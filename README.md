@@ -1,6 +1,6 @@
 # Hangman
 
-**TODO: Add description**
+**Hangman game engine**
 
 ## Installation
 
