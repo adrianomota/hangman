@@ -3,7 +3,7 @@ defmodule Hangman.Server do
 
   use GenServer
 
-  def start_link() do
+  def start_link(_state) do
     GenServer.start_link(__MODULE__, nil)
   end
 
@@ -17,6 +17,15 @@ defmodule Hangman.Server do
   end
 
   def handle_call({:tally}, _from, game) do
+    {:reply, Game.tally(game), game}
+  end
+
+  def handle_cast({:make_move, guess}, _from, game) do
+    {game, tally} = Game.make_move(game, guess)
+    {:reply, tally, game}
+  end
+
+  def handle_cast({:tally}, _from, game) do
     {:reply, Game.tally(game), game}
   end
 end
